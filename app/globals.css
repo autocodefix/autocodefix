@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --orange: #FF5722;
+  --orange-light: #FF8A65;
+  --yellow: #FFC107;
+  --dark: #0D0D0D;
+  --dark2: #1A1A1A;
+  --dark3: #252525;
+  --card: #1E1E1E;
+  --text: #F5F5F5;
+  --muted: #999999;
+  --border: #2E2E2E;
+  --green: #00C853;
+  --red: #FF1744;
+  --radius: 12px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--dark);
+  color: var(--text);
+  font-family: var(--font-dm, 'DM Sans'), sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Severity bar accent */
+.sev-bar-high::before { background: var(--red); }
+.sev-bar-med::before  { background: var(--yellow); }
+.sev-bar-low::before  { background: var(--green); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--dark2); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--orange); }
+
+/* Selection */
+::selection { background: rgba(255, 87, 34, 0.3); color: var(--text); }

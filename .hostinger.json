@@ -1,0 +1,7 @@
+{
+  "runtime": "nodejs",
+  "nodeVersion": "20",
+  "buildCommand": "npm install && npm run build",
+  "startCommand": "node .next/standalone/server.js",
+  "outputDirectory": ".next"
+}
