@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+turbopack: {},
   // Standalone output: bundles only what's needed — required for Hostinger Node.js deployment
   output: 'standalone',
 
