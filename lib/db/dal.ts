@@ -94,10 +94,7 @@ export async function getAllCodes(): Promise<{ code: string }[]> {
     .order('code')
 
   if (error || !data) return STATIC_CODES.map(c => ({ code: c.code.toLowerCase() }))
-  return (data as Array<{ code: string }>).map(r => ({ code: r.code.toLowerCase() }))
-
-  if (error || !data) return STATIC_CODES.map(c => ({ code: c.code.toLowerCase() }))
-  if (!data) return STATIC_CODES.map(c => ({ code: c.code.toLowerCase() }))\n  return (data || []).map(r => ({ code: r.code.toLowerCase() }))
+  return (data || []).map(r => ({ code: r.code.toLowerCase() }))
 }
 
 // ── getAllFullCodes (for homepage — returns complete OBDCode objects) ──────────
