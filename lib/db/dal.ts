@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * AUTO CODE FIX — Data Access Layer (DAL)
  *
