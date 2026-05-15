@@ -1,5 +1,4 @@
 "use client";
-"use client";
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Header from '@/components/Header'

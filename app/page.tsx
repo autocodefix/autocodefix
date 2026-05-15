@@ -1,4 +1,3 @@
-"use client";
 import type { Metadata } from 'next'
 import { Suspense } from 'react'
 import Header from '@/components/Header'

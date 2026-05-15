@@ -1,4 +1,3 @@
-"use client";
 import type { Metadata } from 'next'
 import { Bebas_Neue, DM_Sans } from 'next/font/google'
 import './globals.css'
