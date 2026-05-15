@@ -1,6 +1,4 @@
 "use client";
-"use client";
-"use client";
 import Link from 'next/link'
 import { OBDCode, sevHex } from '@/lib/codes-db'
 
