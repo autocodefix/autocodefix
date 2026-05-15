@@ -1,3 +1,4 @@
+"use client";
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
@@ -10,23 +11,7 @@ import { getCodesByCategory, getCategoryStats } from '@/lib/db/dal'
 const BASE = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://autocodefix.com'
 const CATEGORIES = Object.keys(CATEGORY_META) as Category[]
 
-export async function generateStaticParams() {
-  return CATEGORIES.map(cat => ({ cat }))
-}
 
-export async function generateMetadata({ params }: { params: Promise<{ cat: string }> }): Promise<Metadata> {
-  const { cat } = await params
-  if (!CATEGORIES.includes(cat as Category)) return {}
-  const meta = CATEGORY_META[cat as Category]
-  const title = `${meta.label} OBD2 Codes — AUTO CODE FIX`
-  const description = `Browse all ${meta.label} OBD2 diagnostic trouble codes. Find causes, symptoms, and repair guides for every ${meta.label.toLowerCase()} fault code.`
-  return {
-    title,
-    description,
-    alternates: { canonical: `${BASE}/category/${cat}` },
-    openGraph: { title, description, url: `${BASE}/category/${cat}`, type: 'website' },
-  }
-}
 
 const SEV_HEX: Record<Severity, string> = { high: '#FF1744', med: '#FFC107', low: '#00C853' }
 const SEV_LABEL: Record<Severity, string> = { high: 'Critical', med: 'Moderate', low: 'Minor' }
