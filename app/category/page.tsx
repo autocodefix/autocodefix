@@ -68,14 +68,6 @@ export default async function CategoriesPage() {
                   transition: 'border-color .2s, transform .2s',
                   position: 'relative', overflow: 'hidden',
                 }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.borderColor = 'var(--orange)'
-                  ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-3px)'
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLElement).style.borderColor = 'var(--border)'
-                  ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
-                }}
               >
                 <div style={{
                   position: 'absolute', top: 0, right: 0, width: 80, height: 80,
