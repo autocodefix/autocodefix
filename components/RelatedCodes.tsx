@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { OBDCode, sevHex } from '@/lib/codes-db';
 
 interface Props {
+  currentCode?: string;
   codes: OBDCode[];
 }
 
