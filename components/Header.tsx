@@ -32,7 +32,7 @@ export default function Header() {
       <nav style={{ display: 'flex', gap: '1.5rem' }}>
         <Link href="/category" style={navLink}>Categories</Link>
         <Link href="/#results" style={navLink}>All Codes</Link>
-        <Link href="/#about" style={navLink}>About</Link>
+        <Link href="/about" style={navLink}>About</Link>
         <Link href="/#contact" style={navLink}>Contact</Link>
         <Link href="/" style={{ ...navLink, ...navCta }}>🔍 Lookup</Link>
       </nav>
