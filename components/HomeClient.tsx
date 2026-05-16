@@ -108,17 +108,6 @@ export default function HomeClient({ codes, categoryMeta }: Props) {
           ))}
         </div>
 
-        {/* Stats */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '2.5rem', marginTop: '2.5rem', flexWrap: 'wrap' }}>
-          {[['2,600+', 'Codes'], ['12', 'Categories'], ['AI', 'Diagnosis'], ['Free', 'Forever']].map(([num, label]) => (
-            <div key={label} style={{ textAlign: 'center' }}>
-              <div style={{ fontFamily: 'var(--font-bebas)', fontSize: '2rem', color: 'var(--orange)', letterSpacing: 2 }}>{num}</div>
-              <div style={{ fontSize: '0.72rem', color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: 1 }}>{label}</div>
-            </div>
-        ))}
-        </div>
-      </div>
-
       {/* CATEGORIES — now linked to real pages */}
       <div id="cats" style={{ padding: '2.5rem 2rem', maxWidth: 1180, margin: '0 auto' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem', flexWrap: 'wrap', gap: 10 }}>
