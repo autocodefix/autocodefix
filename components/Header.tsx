@@ -42,7 +42,6 @@ export default function Header() {
           <Link href="/#results" style={navLink}>{t(lang, 'allCodes')}</Link>
           <Link href="/about" style={navLink}>{t(lang, 'about')}</Link>
           <Link href="/#contact" style={navLink}>{t(lang, 'contact')}</Link>
-          <Link href="/" style={{ ...navLink, ...navCta }}>{t(lang, 'lookup')}</Link>
         </nav>
         <LangSwitcher />
       </div>
