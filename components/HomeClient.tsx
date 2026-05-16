@@ -88,7 +88,7 @@ export default function HomeClient({ codes, categoryMeta }: Props) {
           color: 'var(--muted)', fontSize: '1.1rem', marginTop: '1.25rem',
           maxWidth: 560, marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.7,
         }}>
-          Instant OBD2 diagnostic trouble code lookup with AI-powered causes, symptoms, repair guides, and estimated costs.
+          Instant OBD2 diagnostic trouble code lookup with causes, symptoms, repair guides, and estimated costs.
         </p>
 
         {/* Real Search bar with autocomplete */}
