@@ -68,15 +68,6 @@ export default function HomeClient({ codes, categoryMeta }: Props) {
           pointerEvents: 'none',
         }} />
 
-        <div style={{
-          display: 'inline-block', background: 'rgba(255,87,34,0.12)', color: 'var(--orange)',
-          border: '1px solid rgba(255,87,34,0.3)', borderRadius: 20,
-          fontSize: '0.75rem', fontWeight: 600, letterSpacing: 2,
-          textTransform: 'uppercase', padding: '5px 16px', marginBottom: '1.5rem',
-        }}>
-          🔧 Free Diagnostic Tool
-        </div>
-
         <h1 style={{
           fontFamily: 'var(--font-bebas)',
           fontSize: 'clamp(3.5rem,9vw,7rem)',
