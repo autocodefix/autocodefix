@@ -51,6 +51,8 @@ export const SEV_META: Record<Severity, { label: string; color: string; hex: str
   low:  { label: 'Minor',    color: 'text-green-400',  hex: '#00C853' },
 };
 
+import { EXTENDED_CODES } from './codes-db-extended'
+
 export const CODES: OBDCode[] = [
 
   /* ═══════════════════ ENGINE ═══════════════════ */
@@ -247,6 +249,7 @@ export const CODES: OBDCode[] = [
     symptoms:['Battery warning light','Dim headlights','Electrical accessories behaving oddly','Multiple random fault codes'],
     solutions:['Load test the battery','Test alternator output (should be 13.5–14.8V running)','Clean battery terminals','Replace battery or alternator as needed'],
     diy:true, avg_cost:'$50–$400', tip:'Multiple random codes across different systems combined with this code almost always mean the battery or alternator — fix power supply first, then re-scan.' },
+  ...EXTENDED_CODES,
 ];
 
 /* ─── Helper functions ─── */
