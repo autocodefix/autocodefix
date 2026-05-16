@@ -124,7 +124,7 @@ export default function HomeClient({ codes, categoryMeta }: Props) {
               <div style={{ fontFamily: 'var(--font-bebas)', fontSize: '2rem', color: 'var(--orange)', letterSpacing: 2 }}>{num}</div>
               <div style={{ fontSize: '0.72rem', color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: 1 }}>{label}</div>
             </div>
-          ))}
+        ))}
         </div>
       </div>
 
