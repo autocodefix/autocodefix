@@ -44,16 +44,18 @@ export default function ContactPage() {
           <div style={{ background: 'var(--card)', border: '1.5px solid var(--border)', borderRadius: 'var(--radius)', padding: '1.25rem' }}>
             <div style={{ fontSize: '0.72rem', color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: 1, marginBottom: '1rem' }}>Follow Us</div>
             <div style={{ display: 'flex', gap: '0.75rem' }}>
-              {[
-                { href: 'https://facebook.com', icon: '📘' },
-                { href: 'https://x.com', icon: '🐦' },
-                { href: 'https://instagram.com', icon: '📸' },
-                { href: 'https://tiktok.com', icon: '🎵' },
-              ].map((s, i) => (
-                <a key={i} href={s.href} target="_blank" rel="noopener noreferrer"
-                  style={{ width: 42, height: 42, borderRadius: 10, background: 'var(--dark3)', border: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem', textDecoration: 'none' }}
-                >{s.icon}</a>
-              ))}
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                <svg width="38" height="38" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="fb2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#18ACFE"/><stop offset="100%" stopColor="#0163E0"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#fb2)"/><path d="M13.5 8.5H15V6H13C11.3 6 10 7.3 10 9v1.5H8.5V13H10v7h2.5v-7h2l.5-2.5h-2.5V9c0-.3.2-.5.5-.5z" fill="white"/></svg>
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                <svg width="38" height="38" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#000"/><path d="M17.5 4h2.5l-5.5 6.3L21 20h-5l-3.5-4.6L8.5 20H6l5.8-6.6L3 4h5.1l3.2 4.2L17.5 4zm-.9 14.4h1.4L7.5 5.4H6l10.6 13z" fill="white"/></svg>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                <svg width="38" height="38" viewBox="0 0 24 24" fill="none"><defs><radialGradient id="ig2" cx="30%" cy="107%" r="150%"><stop offset="0%" stopColor="#fdf497"/><stop offset="45%" stopColor="#fd5949"/><stop offset="60%" stopColor="#d6249f"/><stop offset="90%" stopColor="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="6" fill="url(#ig2)"/><rect x="6" y="6" width="12" height="12" rx="4" stroke="white" strokeWidth="1.5" fill="none"/><circle cx="12" cy="12" r="3" stroke="white" strokeWidth="1.5" fill="none"/><circle cx="16.5" cy="7.5" r="1" fill="white"/></svg>
+              </a>
+              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                <svg width="38" height="38" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#010101"/><path d="M16 6h-2v8.5c0 1-.8 1.8-1.8 1.8s-1.8-.8-1.8-1.8.8-1.8 1.8-1.8c.2 0 .3 0 .5.1V10.1c-.2 0-.3 0-.5 0-2.1 0-3.7 1.7-3.7 3.7s1.7 3.7 3.7 3.7 3.7-1.7 3.7-3.7V9.8c.7.4 1.6.7 2.5.7V8c-1.2 0-2.2-.8-2.4-2z" fill="white"/></svg>
+              </a>
             </div>
           </div>
 
