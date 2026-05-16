@@ -107,6 +107,7 @@ export default function HomeClient({ codes, categoryMeta }: Props) {
             </button>
           ))}
         </div>
+      </div>
 
       {/* CATEGORIES — now linked to real pages */}
       <div id="cats" style={{ padding: '2.5rem 2rem', maxWidth: 1180, margin: '0 auto' }}>
