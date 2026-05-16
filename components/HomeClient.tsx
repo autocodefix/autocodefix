@@ -4,6 +4,8 @@ import { useState, useMemo, useEffect } from 'react'
 import Link from 'next/link'
 import { useSearchParams, useRouter } from 'next/navigation'
 import SearchBar from '@/components/SearchBar'
+import { useLang } from '@/components/LangContext'
+import { t } from '@/lib/i18n'
 import { OBDCode, Category, Severity } from '@/lib/codes-db'
 
 interface CategoryMeta { label: string; icon: string; count: number }
@@ -17,6 +19,7 @@ const SEV_HEX: Record<Severity, string> = { high: '#FF1744', med: '#FFC107', low
 const SEV_LABEL: Record<Severity, string> = { high: 'Critical', med: 'Moderate', low: 'Minor' }
 
 export default function HomeClient({ codes, categoryMeta }: Props) {
+  const { lang, rtl } = useLang()
   const searchParams = useSearchParams()
   const router = useRouter()
   const [search, setSearch] = useState(searchParams?.get('q') ?? '')
@@ -113,10 +116,10 @@ export default function HomeClient({ codes, categoryMeta }: Props) {
       <div id="cats" style={{ padding: '2.5rem 2rem', maxWidth: 1180, margin: '0 auto' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem', flexWrap: 'wrap', gap: 10 }}>
           <div style={{ fontFamily: 'var(--font-bebas)', fontSize: '2rem', letterSpacing: 2 }}>
-            Browse by <span style={{ color: 'var(--orange)' }}>Category</span>
+            {t(lang, 'browseCategory')} <span style={{ color: 'var(--orange)' }}>{t(lang, 'category')}</span>
           </div>
           <Link href="/category" style={{ fontSize: '0.82rem', color: 'var(--orange)', textDecoration: 'none', fontWeight: 600 }}>
-            View all categories →
+            {t(lang, 'viewAll')}
           </Link>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))', gap: 12 }}>
@@ -162,14 +165,14 @@ export default function HomeClient({ codes, categoryMeta }: Props) {
           marginBottom: '1.25rem', flexWrap: 'wrap', gap: 10,
         }}>
           <div style={{ fontFamily: 'var(--font-bebas)', fontSize: '1.8rem', letterSpacing: 1 }}>
-            {search ? `Results for "${search}"` : 'All Codes'}
+            {search ? `Results for "${search}"` : t(lang, 'allCodes')}
           </div>
-          <span style={{ fontSize: '0.85rem', color: 'var(--muted)' }}>{filtered.length} code{filtered.length !== 1 ? 's' : ''}</span>
+          <span style={{ fontSize: '0.85rem', color: 'var(--muted)' }}>{filtered.length} {filtered.length !== 1 ? t(lang, 'codes') : t(lang, 'code')}</span>
         </div>
 
         {/* Severity filters */}
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: '1.25rem' }}>
-          {[['all', 'All Severity'], ['high', '🔴 Critical'], ['med', '🟡 Moderate'], ['low', '🟢 Minor']].map(([id, label]) => (
+          {[['all', t(lang, 'severity')], ['high', t(lang, 'critical')], ['med', t(lang, 'moderate')], ['low', t(lang, 'minor')]].map(([id, label]) => (
             <button
               key={id}
               onClick={() => setActiveSev(id as Severity | 'all')}
@@ -190,7 +193,7 @@ export default function HomeClient({ codes, categoryMeta }: Props) {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 16 }}>
           {filtered.length === 0 ? (
             <div style={{ gridColumn: '1/-1', textAlign: 'center', padding: '3rem', color: 'var(--muted)' }}>
-              No codes found for &ldquo;{search}&rdquo;. Try a different search term.
+              {t(lang, 'noResults')}
             </div>
           ) : filtered.map(c => (
             <Link
@@ -236,7 +239,7 @@ export default function HomeClient({ codes, categoryMeta }: Props) {
                     {categoryMeta[c.cat]?.label}
                   </span>
                   <span style={{ fontSize: '0.78rem', color: 'var(--orange)', fontWeight: 600 }}>
-                    View details →
+                    {t(lang, 'viewDetails')}
                   </span>
                 </div>
               </div>
