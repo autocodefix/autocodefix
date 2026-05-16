@@ -1,8 +1,13 @@
-"use client";
+'use client'
 
 import Link from 'next/link'
+import LangSwitcher from '@/components/LangSwitcher'
+import { useLang } from '@/components/LangContext'
+import { t } from '@/lib/i18n'
 
 export default function Header() {
+  const { lang } = useLang()
+
   return (
     <header style={{
       background: 'var(--dark2)',
@@ -15,6 +20,8 @@ export default function Header() {
       position: 'sticky',
       top: 0,
       zIndex: 100,
+      flexWrap: 'wrap',
+      gap: '0.5rem',
     }}>
       <Link href="/" style={{
         fontFamily: 'var(--font-bebas)',
@@ -29,13 +36,16 @@ export default function Header() {
         ⚡ AUTO CODE FIX
       </Link>
 
-      <nav style={{ display: 'flex', gap: '1.5rem' }}>
-        <Link href="/category" style={navLink}>Categories</Link>
-        <Link href="/#results" style={navLink}>All Codes</Link>
-        <Link href="/about" style={navLink}>About</Link>
-        <Link href="/#contact" style={navLink}>Contact</Link>
-        <Link href="/" style={{ ...navLink, ...navCta }}>🔍 Lookup</Link>
-      </nav>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+        <nav style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
+          <Link href="/category" style={navLink}>{t(lang, 'categories')}</Link>
+          <Link href="/#results" style={navLink}>{t(lang, 'allCodes')}</Link>
+          <Link href="/about" style={navLink}>{t(lang, 'about')}</Link>
+          <Link href="/#contact" style={navLink}>{t(lang, 'contact')}</Link>
+          <Link href="/" style={{ ...navLink, ...navCta }}>{t(lang, 'lookup')}</Link>
+        </nav>
+        <LangSwitcher />
+      </div>
     </header>
   )
 }
