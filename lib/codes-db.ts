@@ -31,18 +31,18 @@ export type Category =
 export type Severity = 'high' | 'med' | 'low';
 
 export const CATEGORY_META: Record<Category, { label: string; icon: string; count: number }> = {
-  engine:       { label: 'Engine',        icon: '🔥', count: 620  },
+  engine:       { label: 'Engine',        icon: '🔧', count: 620  },
   transmission: { label: 'Transmission',  icon: '⚙️', count: 310  },
   fuel:         { label: 'Fuel System',   icon: '⛽', count: 280  },
   emissions:    { label: 'Emissions',     icon: '💨', count: 240  },
-  ignition:     { label: 'Ignition',      icon: '⚡', count: 190  },
+  ignition:     { label: 'Ignition',      icon: '🔑', count: 190  },
   abs:          { label: 'ABS / Brakes',  icon: '🛑', count: 180  },
-  airbag:       { label: 'Airbag / SRS',  icon: '🪂', count: 120  },
+  airbag:       { label: 'Airbag / SRS',  icon: '🫧', count: 120  },
   hvac:         { label: 'HVAC',          icon: '❄️', count: 115  },
-  electrical:   { label: 'Electrical',    icon: '🔌', count: 200  },
+  electrical:   { label: 'Electrical',    icon: '⚡', count: 200  },
   network:      { label: 'Network / CAN', icon: '📡', count: 180  },
-  sensors:      { label: 'Sensors',       icon: '📡', count: 310  },
-  exhaust:      { label: 'Exhaust',       icon: '💭', count: 95   },
+  sensors:      { label: 'Sensors',       icon: '📟', count: 310  },
+  exhaust:      { label: 'Exhaust',       icon: '🌫️', count: 95   },
 };
 
 export const SEV_META: Record<Severity, { label: string; color: string; hex: string }> = {
