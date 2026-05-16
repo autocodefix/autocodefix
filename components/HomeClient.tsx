@@ -119,7 +119,7 @@ export default function HomeClient({ codes, categoryMeta }: Props) {
 
         {/* Stats */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '2.5rem', marginTop: '2.5rem', flexWrap: 'wrap' }}>
-          {[['2,600+', 'Codes'], ['12', 'Categories'], ['AI', 'Diagnosis'], ['Free', 'Forever']].map(([num, label]) => (
+          {[['2,600+', 'Codes'], ['12', 'Categories'], // ['AI', 'Diagnosis'], ['Free', 'Forever']].map(([num, label]) => (
             <div key={label} style={{ textAlign: 'center' }}>
               <div style={{ fontFamily: 'var(--font-bebas)', fontSize: '2rem', color: 'var(--orange)', letterSpacing: 2 }}>{num}</div>
               <div style={{ fontSize: '0.72rem', color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: 1 }}>{label}</div>

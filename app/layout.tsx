@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Bebas_Neue, DM_Sans } from 'next/font/google'
 import './globals.css'
+import AIChat from '@/components/AIChat'
 
 const bebas = Bebas_Neue({
   weight: '400',
@@ -42,7 +43,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${bebas.variable} ${dm.variable}`}>
-      <body>{children}</body>
+      <body>{children}<AIChat />
+</body>
     </html>
   )
 }
