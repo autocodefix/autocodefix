@@ -31,7 +31,6 @@ function InstagramIcon() {
       <defs>
         <radialGradient id="ig-grad1" cx="30%" cy="107%" r="150%">
           <stop offset="0%" stopColor="#fdf497"/>
-          <stop offset="5%" stopColor="#fdf497"/>
           <stop offset="45%" stopColor="#fd5949"/>
           <stop offset="60%" stopColor="#d6249f"/>
           <stop offset="90%" stopColor="#285AEB"/>
@@ -58,17 +57,7 @@ export default function Footer() {
   return (
     <>
       <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 1000 }}>
-        <button
-          style={{
-            width: 56, height: 56,
-            borderRadius: '50%',
-            border: 'none',
-            cursor: 'pointer',
-            background: 'linear-gradient(135deg, #FF5722 0%, #FF8C42 50%, #FFB347 100%)',
-            boxShadow: '0 4px 20px rgba(255,87,34,0.5), 0 0 0 2px rgba(255,87,34,0.2), inset 0 1px 0 rgba(255,255,255,0.3)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-          }}
-        >
+        <button style={{ width: 56, height: 56, borderRadius: '50%', border: 'none', cursor: 'pointer', background: 'linear-gradient(135deg, #FF5722 0%, #FF8C42 50%, #FFB347 100%)', boxShadow: '0 4px 20px rgba(255,87,34,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
             <path d="M6 13c0-4.4 3.6-8 8-8s8 3.6 8 8c0 2.8-1.4 5.2-3.6 6.7l.3 1.8c.1.5-.4.9-.8.7L14 21c-.2 0-.3-.1-.4-.2C9.8 19.5 6 16.5 6 13z" fill="white"/>
             <circle cx="11" cy="13" r="1.3" fill="#FF5722"/>
@@ -77,7 +66,6 @@ export default function Footer() {
           </svg>
         </button>
       </div>
-
       <footer style={{ background: 'var(--dark2)', borderTop: '1px solid var(--border)', padding: '2.5rem 2rem', marginTop: '4rem' }}>
         <div style={{ maxWidth: 1000, margin: '0 auto' }}>
           <div style={{ display: 'flex', gap: '3rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
@@ -89,11 +77,32 @@ export default function Footer() {
                 The world&apos;s most comprehensive OBD2 fault code database — free, multilingual, and AI-powered.
               </p>
               <div style={{ marginTop: '1rem', display: 'flex', gap: '0.6rem', alignItems: 'center', flexWrap: 'wrap' }}>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-                  style={{ display: 'flex', transition: 'transform 0.2s', filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.4))' }}
-                  onMouseEnter={e => (e.currentTarget as HTMLElement).style.transform = 'translateY(-3px) scale(1.15)'}
-                  onMouseLeave={e => (e.currentTarget as HTMLElement).style.transform = 'translateY(0) scale(1)'}
-                ><FacebookIcon /></a>
-                <a href="https://x.com" target="_blank" rel="noopener noreferrer"
-                  style={{ display: 'flex', transition: 'transform 0.2s', filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.4))' }}
-                  onMouseEnter={e => (e.currentTarget as HTMLElement).st
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><FacebookIcon /></a>
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><XIcon /></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><InstagramIcon /></a>
+                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" style={{ display: 'flex' }}><TikTokIcon /></a>
+                <a href="mailto:admin@autocodefix.com" style={{ color: 'var(--orange)', textDecoration: 'none', fontSize: '0.82rem', marginLeft: '0.25rem' }}>✉️ admin@autocodefix.com</a>
+              </div>
+            </div>
+            <div>
+              <h4 style={{ color: 'var(--text)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: 1.5, marginBottom: '0.75rem' }}>Quick Links</h4>
+              {['/#cats|Categories', '/#results|All Codes', '/#about|About', '/#contact|Contact'].map(item => {
+                const [href, label] = item.split('|')
+                return <Link key={href} href={href} style={{ display: 'block', color: 'var(--muted)', fontSize: '0.82rem', textDecoration: 'none', marginBottom: '0.4rem' }}>{label}</Link>
+              })}
+            </div>
+            <div>
+              <h4 style={{ color: 'var(--text)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: 1.5, marginBottom: '0.75rem' }}>Popular Codes</h4>
+              {['P0300', 'P0420', 'P0171', 'P0442', 'P0011'].map(code => (
+                <Link key={code} href={`/${code.toLowerCase()}`} style={{ display: 'block', color: 'var(--muted)', fontSize: '0.82rem', textDecoration: 'none', marginBottom: '0.4rem' }}>{code}</Link>
+              ))}
+            </div>
+          </div>
+          <div style={{ borderTop: '1px solid var(--border)', paddingTop: '1.25rem', textAlign: 'center', color: 'var(--muted)', fontSize: '0.78rem' }}>
+            <strong style={{ color: 'var(--orange)' }}>AUTO CODE FIX</strong> — Data is for reference only. Always consult a certified technician for safety-critical repairs.
+          </div>
+        </div>
+      </footer>
+    </>
+  )
+}
