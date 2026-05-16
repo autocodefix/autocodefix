@@ -41,7 +41,7 @@ export default function Header() {
           <Link href="/category" style={navLink}>{t(lang, 'categories')}</Link>
           <Link href="/#results" style={navLink}>{t(lang, 'allCodes')}</Link>
           <Link href="/about" style={navLink}>{t(lang, 'about')}</Link>
-          <Link href="/#contact" style={navLink}>{t(lang, 'contact')}</Link>
+          <Link href="/contact" style={navLink}>{t(lang, 'contact')}</Link>
         </nav>
         <LangSwitcher />
       </div>
