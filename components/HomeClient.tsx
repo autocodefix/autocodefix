@@ -243,6 +243,7 @@ export default function HomeClient({ codes, categoryMeta }: Props) {
           ))}
         </div>
       </div>
+    </>
   )
 }
 
