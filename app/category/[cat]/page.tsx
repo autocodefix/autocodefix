@@ -1,3 +1,4 @@
+'use client'
 import BackButton from '@/components/BackButton'
 "use client";
 import type { Metadata } from 'next'
