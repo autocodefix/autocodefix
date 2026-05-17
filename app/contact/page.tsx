@@ -1,4 +1,5 @@
 'use client'
+import BackButton from '@/components/BackButton'
 
 import type { Metadata } from 'next'
 
@@ -18,7 +19,8 @@ export default function ContactPage() {
         </p>
       </div>
 
-      <div style={{ maxWidth: 900, margin: '0 auto', padding: '4rem 2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+      <div style={{ maxWidth: 900, margin: '0 auto', padding: '1rem 2rem 0' }}><BackButton /></div>
+      <div style={{ maxWidth: 900, margin: '0 auto', padding: '3rem 2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
           <h2 style={{ fontFamily: 'var(--font-bebas)', fontSize: '1.8rem', letterSpacing: 2, color: 'var(--text)', marginBottom: '0.5rem' }}>

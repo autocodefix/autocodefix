@@ -1,3 +1,4 @@
+import BackButton from '@/components/BackButton'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -49,6 +50,7 @@ export default function AboutPage() {
       </div>
 
       {/* MAIN CONTENT */}
+      <div style={{ maxWidth: 860, margin: '0 auto', padding: '1.5rem 2rem 0' }}><BackButton /></div>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '4rem 2rem' }}>
 
         {/* Intro card */}
