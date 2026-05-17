@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import BackButton from '@/components/BackButton'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import RelatedCodes from '@/components/RelatedCodes'
