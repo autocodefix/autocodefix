@@ -2,9 +2,10 @@
   "name": "autocodefix",
   "version": "1.0.0",
   "private": true,
-  "engines": {
-    "node": ">=20.0.0",
-    "npm": ">=10.0.0"
+
+"engines": {
+    "node": "20.x",
+    "npm": "10.x"
   },
   "scripts": {
     "dev": "next dev",
